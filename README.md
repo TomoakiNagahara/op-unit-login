@@ -1,8 +1,2 @@
-op-unit-model
+op-unit-login
 ===
-
-# Init
-
-```sh
-php ./init.php 2024
-```
