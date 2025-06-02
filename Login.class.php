@@ -54,4 +54,14 @@ class Login implements IF_UNIT
 			}
 		}
 	}
+
+	/** Return login status.
+	 *
+	 * @created     2025-06-02
+	 * @return      bool
+	 */
+	static function isLoggedin() : ?bool
+	{
+		return self::Session('isLoggedin');
+	}
 }
