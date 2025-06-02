@@ -19,6 +19,8 @@ namespace OP\UNIT;
 use OP\IF_UNIT;
 use OP\OP_CORE;
 use OP\OP_CI;
+use OP\OP_SESSION;
+use OP\OP_TEMPLATE;
 
 /** Login
  *
@@ -31,4 +33,5 @@ use OP\OP_CI;
 class Login implements IF_UNIT
 {
 	use OP_CORE, OP_CI;
+	use OP_SESSION, OP_TEMPLATE;
 }
