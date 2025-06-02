@@ -1,0 +1,38 @@
+<?php
+/** op-unit-login:/template/login.phtml
+ *
+ * @created     2025-06-02
+ * @version     1.0
+ * @package     op-unit-login
+ * @author      Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
+ * @copyright   Tomoaki Nagahara All right reserved.
+ */
+
+/* @var $form \OP\UNIT\Form */
+$form = OP()->Form();
+$form->Config('../config/login.php');
+
+//	...
+if( $form->isValidate() ){
+	//	...
+	if( OP()->Unit('QQL')->Open("Login.sqlite3") ){
+		//	...
+		if( $account = $form->GetValue('account') ){
+			$record  = OP()->Unit('QQL')->Get(" t_register.account = {$account} ");
+			//	...
+			if( $record['password'] === md5( $form->GetValue('password') ) ){
+				D('OK');
+				OP()->Template('login/loggedin.phtml');
+				return $record;
+			}else{
+				$message  = 'The account is not registered, or the password does not match.';
+				OP()->Template('login/form.phtml', ['form' => $form, 'message' => $message]);
+			}
+		}
+	}else{
+		//	...
+		OP()->Notice("Please check file location and permission: asset:/db/Login.sqlite3");
+	}
+}else{
+	OP()->Template('login/form.phtml', ['form' => $form]);
+}
