@@ -34,4 +34,24 @@ class Login implements IF_UNIT
 {
 	use OP_CORE, OP_CI;
 	use OP_SESSION, OP_TEMPLATE;
+
+	/** Automatically
+	 *
+	 * @created     2025-06-02
+	 */
+	static function Auto()
+	{
+		//	...
+		if( self::isLoggedin() ){
+			//	...
+			D('Already logged in.');
+		}else{
+			if( $record = self::Template('login.php') ){
+				self::Session('isLoggedin', true);
+				self::Session('ai',      $record['ai']);
+				self::Session('account', $record['account']);
+				D($record);
+			}
+		}
+	}
 }
