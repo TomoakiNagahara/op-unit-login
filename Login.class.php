@@ -64,4 +64,16 @@ class Login implements IF_UNIT
 	{
 		return self::Session('isLoggedin');
 	}
+
+	/** Log in information.
+	 *
+	 * @created     2025-06-04
+	 */
+	static function Info()
+	{
+		return [
+			'ai'      => self::Session('ai'),
+			'account' => self::Session('account'),
+		];
+	}
 }
