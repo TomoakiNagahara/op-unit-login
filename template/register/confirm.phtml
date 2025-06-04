@@ -1,0 +1,33 @@
+<?php
+/**	op-unit-form:/template/register/confirm.phtml
+ *
+ * @created    2025-06-02
+ * @version    1.0
+ * @package    op-unit-form
+ * @author     Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
+ * @copyright  Tomoaki Nagahara All right reserved.
+ */
+
+/* @var $form \OP\UNIT\Form */
+
+?>
+<p>Please check your input.</p>
+<?php $form->Start('register') ?>
+<table>
+	<tr>
+		<td><?php $form->Label('account') ?></td>
+		<td><?php $form->Value('account') ?></td>
+	</tr>
+	<tr>
+		<td><?php $form->Label('password') ?></td>
+		<td><?php $form->Value('password') ?></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>
+			<button name="button" value="back"> Back </button>
+			<?php $form->Input('button',['value' => 'Register']) ?>
+		</td>
+	</tr>
+</table>
+<?php $form->Finish('register') ?>
