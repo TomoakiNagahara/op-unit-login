@@ -1,0 +1,35 @@
+<?php
+/**	op-unit-form:/template/register/form.phtml
+ *
+ * @created    2025-06-02
+ * @version    1.0
+ * @package    op-unit-form
+ * @author     Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
+ * @copyright  Tomoaki Nagahara All right reserved.
+ */
+
+/* @var $form    \OP\UNIT\Form */
+/* @var $message string        */
+
+if( empty($message) ){
+	$message = 'Please enter your account name and password.';
+}
+
+?>
+<p><?= $message ?></p>
+<?php $form->Start() ?>
+<table>
+	<?php foreach( $form->Values() as $name => $value ): ?>
+	<tr>
+		<td><?php $form->Label($name) ?></td>
+		<td><?php $form->Input($name) ?></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td class="message error"><?php $form->Error($name) ?></td>
+	</tr>
+	<?php endforeach; ?>
+</table>
+<?php $form->Finish() ?>
+<?php $value ?>
+<p><a href="./">Go back to the login page</a></p>
