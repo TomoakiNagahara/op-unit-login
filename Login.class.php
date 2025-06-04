@@ -76,4 +76,13 @@ class Login implements IF_UNIT
 			'account' => self::Session('account'),
 		];
 	}
+
+	/** Logout
+	 *
+	 * @created     2025-06-04
+	 */
+	static function Logout()
+	{
+		self::Session('isLoggedin', false);
+	}
 }
