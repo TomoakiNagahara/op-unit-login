@@ -1,0 +1,57 @@
+<?php
+/** op-unit-login:/template/register.phtml
+ *
+ * @created     2025-06-04
+ * @version     1.0
+ * @package     op-unit-login
+ * @author      Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
+ * @copyright   Tomoaki Nagahara All right reserved.
+ */
+
+/* @var $form \OP\UNIT\Form */
+$form = OP()->Form();
+$form->Config('../config/register.php');
+
+//	...
+$button = $form->GetValue('button');
+
+//	...
+if( $form->isValidate() === false or $button === 'back'  ){
+	OP()->Template('register/form.phtml', ['form'=>$form]);
+}else{
+	if( $button !== 'Register' ){
+		OP()->Template('register/confirm.phtml', ['form'=>$form]);
+	}else{
+		/* @var $qql \OP\UNIT\QQL */
+		$qql = OP()->Unit('QQL');
+		//	...
+		if( $qql->Open('Login.sqlite3') ){
+			//	...
+			$account  = $form->GetValue('account');
+			$password = md5( $form->GetValue('password') );
+			//	Check
+			if( $ai = $qql->Get("t_register.account = {$account}") ){
+				D($ai);
+				$message = 'This account name is already in use.';
+				OP()->Template('register/form.phtml', ['form'=>$form, 'message'=>$message]);
+				return;
+			}
+			//	...
+			$set = [
+				'account'  => $account,
+				'password' => $password,
+				'created'  => OP()->Timestamp(),
+			];
+			//	...
+			if( $ai = $qql->Set('t_register', $set) ){
+				D($ai);
+				$form->Clear();
+				OP()->Template('register/registered.phtml');
+			}else{
+				if( $error = $qql->Error() ){
+					OP()->Notice($error);
+				}
+			}
+		}
+	}
+}
