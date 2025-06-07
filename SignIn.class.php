@@ -74,6 +74,26 @@ class SignIn implements IF_UNIT
 		self::Template('login/form.phtml', ['form' => $form, 'message' => $message ?? null]);
 	}
 
+	/** Form
+	 *
+	 * @created    2025-06-07
+	 * @return     \OP\IF_FORM
+	 */
+	static function Form() : \OP\IF_FORM
+	{
+		/* @var $_form \OP\IF_FORM */
+		static $_form = null;
+
+		//	Instantiate the form only once.
+		if( $_form === null ){
+			$_form = OP()->Unit()->Instantiate('Form');
+			$_form -> Config(__DIR__.'/config/login.php');
+		}
+
+		//	Return the IF_FORM.
+		return $_form;
+	}
+
 	/** Check if the credentials are valid.
 	 *
 	 * @created    2025-06-07
