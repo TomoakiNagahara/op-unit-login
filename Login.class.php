@@ -46,11 +46,16 @@ class Login implements IF_UNIT
 			//	...
 			D('Already logged in.');
 		}else{
-			if( $record = self::Template('login.php') ){
-				self::Session('isLoggedin', true);
-				self::Session('ai',      $record['ai']);
-				self::Session('account', $record['account']);
-				D($record);
+			D('Not yet logged in.');
+			//	...
+			if(!isset($_GET['register']) ){
+				D( 'sign-in' );
+				require_once(__DIR__.'/SignIn.class.php');
+				LOGIN\SignIn::Auto();
+			}else{
+				D( 'sign-up' );
+				require_once(__DIR__.'/SignUp.class.php');
+				LOGIN\SignUp::Auto();
 			}
 		}
 	}
