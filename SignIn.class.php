@@ -73,4 +73,26 @@ class SignIn implements IF_UNIT
 		//	Failed to validate.
 		self::Template('login/form.phtml', ['form' => $form, 'message' => $message ?? null]);
 	}
+
+	/** Check if the credentials are valid.
+	 *
+	 * @created    2025-06-07
+	 * @param      string      $account
+	 * @param      string      $password
+	 * @return     bool
+	 */
+	static function isCredentials(string $account='', string $password='') : bool
+	{
+		//	...
+		$qql = self::QQL();
+
+		//	...
+		$password = md5($password);
+
+		//	...
+		$record = $qql->Get(" t_register.account = {$account} ");
+
+		//	...
+		return ($record['password'] ?? null) === $password;
+	}
 }
