@@ -18,6 +18,7 @@ namespace OP\UNIT\LOGIN;
  */
 use OP\OP_CORE;
 use OP\OP_CI;
+use OP\OP_TEMPLATE;
 use OP\IF_UNIT;
 
 /** Login
@@ -34,4 +35,5 @@ class SignIn implements IF_UNIT
 	 *
 	 */
 	use OP_CORE, OP_CI;
+	use OP_TEMPLATE;
 }
