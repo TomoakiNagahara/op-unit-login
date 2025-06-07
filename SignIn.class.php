@@ -94,6 +94,26 @@ class SignIn implements IF_UNIT
 		return $_form;
 	}
 
+	/** QQL
+	 *
+	 * @created    2025-06-07
+	 * @return     \OP\IF_QQL
+	 */
+	static function QQL() : \OP\IF_QQL
+	{
+		/* @var $_qql \OP\IF_QQL */
+		static $_qql = null;
+
+		//	Instantiate the unit only once.
+		if( $_qql === null ){
+			$_qql = OP()->Unit('QQL');
+			$_qql->Open('Login.sqlite3');
+		}
+
+		//	Return the IF_QQL.
+		return $_qql;
+	}
+
 	/** Check if the credentials are valid.
 	 *
 	 * @created    2025-06-07
