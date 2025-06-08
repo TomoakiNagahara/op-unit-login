@@ -6,7 +6,8 @@ op-unit-login
 ```php
 //  Automatically the Login process.
 OP()->Unit('Login')->Auto();
-
-//  Display the Login HTML form.
-OP()->Unit('Login')->Html();
 ```
+
+## Customize
+
+If you want to customize the form to your liking, please refer to `reference > customize.md`.
