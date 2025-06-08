@@ -112,4 +112,45 @@ class SignUp implements IF_UNIT
 		//	Return the IF_QQL.
 		return $_qql;
 	}
+
+	/** Register
+	 *
+	 * @created    2025-06-07
+	 */
+	static function Register(string $account, string $password) : bool
+	{
+		//	...
+		$qql = self::QQL();
+
+		//	...
+		$password = md5($password); // Hash the password.
+
+		//	Check if the account name is already in use.
+		if( $ai = $qql->Get("t_register.account = {$account}") ){
+			return false;
+		}
+
+		//	...
+		$set = [
+			'account'  => $account,
+			'password' => $password,
+			'created'  => OP()->Timestamp(),
+		];
+
+		//	Insert the registration data.
+		$ai = $qql->Set('t_register', $set);
+
+		//	Check if the insertion was successful.
+		if( $error = $qql->Error() ){
+			OP()->Notice($error);
+		}
+
+		//	...
+		if(!$ai ){
+			self::Form()->Clear();
+		}
+
+		//	...
+		return $ai ? true : false;
+	}
 }
