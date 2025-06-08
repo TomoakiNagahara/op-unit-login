@@ -36,4 +36,39 @@ class SignUp implements IF_UNIT
 	 */
 	use OP_CORE, OP_CI;
 	use OP_TEMPLATE;
+
+	/** Automatically
+	 *
+	 * @created    2025-06-07
+	 */
+	static function Auto()
+	{
+		//	...
+		$form = self::Form();
+
+		//	Check if input is valid.
+		if( $form->isValidate() ){
+
+			//	Get the submit button value.
+			if( $form->GetValue('button') === 'Register' ){
+
+				//	Get the account and password values.
+				$account  = $form -> GetValue('account');
+				$password = $form -> GetValue('password');
+
+				//	Do the registration.
+				$file =  self::Register($account, $password) ? 'success':'failure';
+				$form -> Clear();
+				self::Template("register/{$file}.phtml");
+				return;
+			}
+
+			//	Display the confirmation form.
+			self::Template('register/confirm.phtml', ['form'=>$form]);
+			return;
+		}
+
+		//	...
+		self::Template('register/form.phtml', ['form'=>$form]);
+	}
 }
