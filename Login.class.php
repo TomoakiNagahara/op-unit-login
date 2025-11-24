@@ -1,14 +1,14 @@
 <?php
-/** op-unit-login:/Login.class.php
+/**	op-unit-login:/Login.class.php
  *
  * @created     2023-01-30
  * @version     1.0
  * @package     op-unit-login
- * @author      Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright   Tomoaki Nagahara All right reserved.
+ * @author      Tomoaki Nagahara
+ * @copyright   Tomoaki Nagahara All rights reserved.
  */
 
-/** namespace
+/**	Namespace
  *
  */
 namespace OP\UNIT;
@@ -22,42 +22,45 @@ use OP\OP_CI;
 use OP\OP_SESSION;
 use OP\OP_TEMPLATE;
 
-/** Login
+/**	Login
  *
  * @created     2023-01-30
- * @version     1.0
- * @package     op-unit-login
- * @author      Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright   Tomoaki Nagahara All right reserved.
  */
 class Login implements IF_UNIT
 {
 	use OP_CORE, OP_CI;
 	use OP_SESSION, OP_TEMPLATE;
 
-	/** Automatically
+	/**	Automatically
 	 *
 	 * @created     2025-06-02
 	 */
 	static function Auto()
 	{
-		//	...
-		if( self::isLoggedin() ){
-			//	...
-			D('Already logged in.');
-		}else{
-			D('Not yet logged in.');
-			//	...
-			if(!isset($_GET['register']) ){
-				D( 'sign-in' );
-				require_once(__DIR__.'/SignIn.class.php');
-				LOGIN\SignIn::Auto();
-			}else{
-				D( 'sign-up' );
-				require_once(__DIR__.'/SignUp.class.php');
-				LOGIN\SignUp::Auto();
-			}
-		}
+		//	Get SmartURL arguments.
+		$args = OP()->Unit()->Router()->Args();
+
+		//	Switch process by args.
+		switch( $args[0] ?? null ){
+			case 'logout':
+				self::Logout();
+				break;
+
+			case 'register':
+				require_once(__DIR__.'/SignUp.class.php');;
+				LOGIN\SignUp::Auto();;
+				break;
+
+			default:
+				if( self::isLoggedin() ){
+					//	...
+					D('Already logged in.');
+				}else{
+					require_once(__DIR__.'/SignIn.class.php');
+					LOGIN\SignIn::Auto();
+				}
+			break;
+		};
 	}
 
 	/** Return login status.
