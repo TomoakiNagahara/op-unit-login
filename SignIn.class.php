@@ -127,8 +127,15 @@ class SignIn implements IF_UNIT
 
 		//	...
 		$record = $qql->Get(" t_register.account = {$account} ");
+		$return = (($record['password'] ?? null) === $password);
 
 		//	...
-		return ($record['password'] ?? null) === $password;
+		if( $return ){
+			\OP\UNIT\Login::Session('ai'     , $record['ai']     );
+			\OP\UNIT\Login::Session('account', $record['account']);
+		}
+
+		//	...
+		return $return;
 	}
 }
