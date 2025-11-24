@@ -6,8 +6,8 @@
  * @created    2023-01-30
  * @version    1.0
  * @package    op-unit-login
- * @author     Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright  Tomoaki Nagahara All right reserved.
+ * @author     Tomoaki Nagahara
+ * @copyright  Tomoaki Nagahara All rights reserved.
  */
 //	...
 return [
