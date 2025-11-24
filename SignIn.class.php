@@ -1,19 +1,19 @@
 <?php
-/** op-unit-login:/SignIn.class.php
+/**	op-unit-login:/SignIn.class.php
  *
  * @created    2025-06-07
  * @version    1.0
  * @package    op-unit-login
- * @author     Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright  Tomoaki Nagahara All right reserved.
+ * @author     Tomoaki Nagahara
+ * @copyright  Tomoaki Nagahara All rights reserved.
  */
 
-/** namespace
+/**	Namespace
  *
  */
 namespace OP\UNIT\LOGIN;
 
-/** use
+/**	Use
  *
  */
 use OP\OP_CORE;
@@ -21,13 +21,9 @@ use OP\OP_CI;
 use OP\OP_TEMPLATE;
 use OP\IF_UNIT;
 
-/** Login
+/**	Login
  *
  * @created    2025-06-07
- * @version    1.0
- * @package    op-unit-login
- * @author     Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright  Tomoaki Nagahara All right reserved.
  */
 class SignIn implements IF_UNIT
 {
