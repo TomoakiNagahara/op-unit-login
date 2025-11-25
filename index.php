@@ -22,3 +22,8 @@ namespace OP;
  *
  */
 require_once(__DIR__.'/Login.class.php');
+
+/**	Include default webpack
+ *
+ */
+OP()->Unit()->WebPack()->Auto(__DIR__.'/webpack/');
