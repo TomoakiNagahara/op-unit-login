@@ -1,12 +1,47 @@
 <?php
-/**	op-unit-form:/template/login/loggedin.phtml
+/**	op-unit-login:/template/login/loggedin.phtml
  *
  * @created    2025-06-04
  * @version    1.0
- * @package    op-unit-form
- * @author     Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright  Tomoaki Nagahara All right reserved.
+ * @package    op-unit-login
+ * @author     Tomoaki Nagahara
+ * @copyright  Tomoaki Nagahara All rights reserved.
  */
 ?>
 <h1>Login was successful.</h1>
-<p>Please reload this page.</p>
+<div>
+	<span>This page will automatically reload in: </span><span id="countdown">10</span>
+	<button name="cancel"> Cancel </button>
+</div>
+<script>
+(function(){
+	//	...
+	let countdown = 10;
+	let timerId;
+
+	//	...
+	function startReload() {
+		//	...
+		const display = document.getElementById('countdown');
+		//	...
+		timerId = setInterval(() => {
+			//	...
+			countdown--;
+			display.textContent = countdown;
+			//	...
+			if (countdown <= 0) {
+				location.href = '<?= OP()->Config('login')['login']['transfer'] ?? OP()->URL('app:/') ?>';
+			}
+		}, 1000);
+	}
+
+	//	...
+	document.querySelector('button[name="cancel"]').addEventListener('click', function(){
+		clearInterval(timerId);
+		document.getElementById('countdown').textContent = 'Reload is canceled.';
+	}, false);
+
+	//	...
+	startReload();
+})();
+</script>
