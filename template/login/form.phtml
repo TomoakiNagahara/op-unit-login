@@ -1,11 +1,11 @@
 <?php
-/**	op-unit-form:/template/login/form.phtml
+/**	op-unit-login:/template/login/form.phtml
  *
  * @created    2025-06-04
  * @version    1.0
- * @package    op-unit-form
- * @author     Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright  Tomoaki Nagahara All right reserved.
+ * @package    op-unit-login
+ * @author     Tomoaki Nagahara
+ * @copyright  Tomoaki Nagahara All rights reserved.
  */
 
 /* @var $form    \OP\IF_FORM */
@@ -22,7 +22,9 @@
 	</tr>
 	<tr>
 		<td></td>
-		<td><?php $form->Error($name) ?></td>
+		<td class="error">
+			<?php $form->Error($name) ?>
+		</td>
 	</tr>
 	<?php endforeach; ?>
 </table>
