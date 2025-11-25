@@ -9,6 +9,21 @@
  * @author     Tomoaki Nagahara
  * @copyright  Tomoaki Nagahara All rights reserved.
  */
+
+//	...
+$login = [
+	//	The URL to redirect to after a successful login.
+	'transfer' => null,
+];
+
+//	...
+$logout = [
+	//	The URL to redirect to after a successful logout.
+	'transfer' => null,
+];
+
 //	...
 return [
+	'login'  => $login,
+	'logout' => $logout,
 ];
