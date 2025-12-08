@@ -1,19 +1,18 @@
 <?php
-/** op-unit-model:/init.php
+/**	op-unit-model:/init.php
  *
  * @created     2023-12-19
- * @version     1.0
+ * @license     Apache-2.0
  * @package     op-unit-model
- * @author      Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright   Tomoaki Nagahara All right reserved.
+ * @copyright   (C) 2023 Tomoaki Nagahara
  */
 
-/** Declare strict
+/**	Declare strict type
  *
  */
 declare(strict_types=1);
 
-/** namespace
+/**	Namespace
  *
  */
 namespace OP;
