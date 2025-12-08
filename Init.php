@@ -27,10 +27,11 @@ $save_dir = getcwd();
  */
 chdir(__DIR__);
 
-/**	Git hooks
+/**	Include
  *
  */
 include(__DIR__.'/.Init/GitHooks.php');
+include(__DIR__.'/.Init/Model.php');
 
 /**	Recovery the current directory.
  *
