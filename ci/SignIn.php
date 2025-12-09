@@ -1,11 +1,10 @@
 <?php
-/** op-unit-login:/ci/Login.php
+/** op-unit-login:/ci/SignIn.php
  *
  * @created     2023-01-30
- * @version     1.0
+ * @license     Apache-2.0
  * @package     op-unit-login
- * @author      Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright   Tomoaki Nagahara All right reserved.
+ * @copyright   (C) 2023 Tomoaki Nagahara
  */
 
 /** namespace

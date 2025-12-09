@@ -2,10 +2,9 @@
 /**	op-unit-login:/SignIn.class.php
  *
  * @created    2025-06-07
- * @version    1.0
+ * @license    Apache-2.0
  * @package    op-unit-login
- * @author     Tomoaki Nagahara
- * @copyright  Tomoaki Nagahara All rights reserved.
+ * @copyright  (C) 2025 Tomoaki Nagahara
  */
 
 /**	Namespace
@@ -21,7 +20,7 @@ use OP\OP_CI;
 use OP\OP_TEMPLATE;
 use OP\IF_UNIT;
 
-/**	Login
+/**	SignIn
  *
  * @created    2025-06-07
  */
