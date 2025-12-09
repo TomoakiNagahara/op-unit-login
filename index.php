@@ -2,10 +2,9 @@
 /**	op-unit-login:/index.php
  *
  * @created     2023-01-30
- * @version     1.0
+ * @license     Apache-2.0
  * @package     op-unit-login
- * @author      Tomoaki Nagahara
- * @copyright   Tomoaki Nagahara All rights reserved.
+ * @copyright   (C) 2023 Tomoaki Nagahara
  */
 
 /**	Declare strict
