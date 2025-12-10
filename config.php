@@ -22,7 +22,14 @@ $logout = [
 ];
 
 //	...
+$database = [
+	'driver' => 'sqlite',
+	'path'   => 'Login.sqlite3',
+];
+
+//	...
 return [
 	'login'  => $login,
 	'logout' => $logout,
+	'database' => $database,
 ];
