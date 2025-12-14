@@ -1,0 +1,47 @@
+<?php
+/**	op-unit-login:/tutorial/index.phtml
+ *
+ * @created    2025-12-08
+ * @license    Apache-2.0
+ * @package    op-unit-login
+ * @copyright  (C) 2025 Tomoaki Nagahara
+ */
+
+/**	Declare strict type
+ *
+ */
+declare(strict_types=1);
+
+/**	Namespace
+ *
+ */
+namespace OP;
+
+?>
+<section class="markdown" data-translation="true">
+# How to use
+
+```php
+OP()->Unit()->Login()->Auto();
+```
+
+```php
+$io = OP()->Unit()->Login()->isLoggedin();
+```
+
+```php
+$info = OP()->Unit()->Login()->Info();
+```
+</section>
+
+<section class="markdown" data-translation="true">
+# Customize template files
+
+Check the template folder in this folder.
+Place files with the same names as these files in the template folder for your application or layout.
+</section>
+
+<section class="markdown" data-translation="true">
+# Feedback
+<?php OP()->Template('tutorial:/feedback.phtml') ?>
+</section>
