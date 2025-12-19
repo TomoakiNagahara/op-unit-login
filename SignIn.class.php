@@ -101,8 +101,10 @@ class SignIn implements IF_UNIT
 
 		//	Instantiate the unit only once.
 		if( $_qql === null ){
-			$_qql = OP()->Unit('QQL');
-			$_qql->Open('Login.sqlite3');
+			$_qql = OP()->Unit()->Instantiate('QQL');
+			$file = 'Login.sqlite3';
+			$path = OP()->isCI() ? "ci/{$file}" : $file;
+			$_qql->Open($path);
 		}
 
 		//	Return the IF_QQL.
