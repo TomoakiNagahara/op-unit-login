@@ -1,5 +1,5 @@
 <?php
-/** op-unit-login:/ci/SignUp.php
+/**	op-unit-login:/ci/SignUp.php
  *
  * @created     2023-01-30
  * @license     Apache-2.0
@@ -7,10 +7,18 @@
  * @copyright   (C) 2023 Tomoaki Nagahara
  */
 
-/** namespace
+/**	Declare strict type
+ *
+ */
+declare(strict_types=1);
+
+/**	Namespace
  *
  */
 namespace OP;
+
+//	...
+include_once('index.php');
 
 /* @var $ci UNIT\CI\CI_Config */
 $ci = OP::Unit('CI')::Config();
