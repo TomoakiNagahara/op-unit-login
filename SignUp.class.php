@@ -98,8 +98,9 @@ class SignUp implements IF_UNIT
 
 		//	Instantiate the unit only once.
 		if( $_qql === null ){
-			$_qql = OP()->Unit()->QQL();
-			$path = OP()->Env()->isCI() ? 'ci/Login.sqlite3' : 'Login.sqlite3';
+			$_qql = OP()->Unit()->Instantiate('QQL');
+			$file = 'Login.sqlite3';
+			$path = OP()->isCI() ? "ci/{$file}" : $file;
 			$_qql->Open($path);
 		}
 
