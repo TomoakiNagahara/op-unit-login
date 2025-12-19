@@ -7,7 +7,12 @@
  * @copyright   (C) 2025 Tomoaki Nagahara
  */
 
-/**	namespace
+/**	Declare strict type
+ *
+ */
+declare(strict_types=1);
+
+/**	Namespace
  *
  */
 namespace OP;
