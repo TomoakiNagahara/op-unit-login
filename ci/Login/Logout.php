@@ -17,5 +17,5 @@ namespace OP;
 //	Logout
 $method = 'Logout';
 $args   =  null;
-$result =  null;
+$result =  true;
 $ci->Set($method, $result, $args);

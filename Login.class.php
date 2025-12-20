@@ -91,10 +91,15 @@ class Login implements IF_UNIT
 	static function Logout()
 	{
 		//	...
+		self::Session('ai',          null);
+		self::Session('account',     null);
 		self::Session('isLoggedin', false);
 
 		//	...
 		require_once(__DIR__.'/SignIn.class.php');
 		LOGIN\SignIn::Form()->Clear();
+
+		//	...
+		return self::Session('isLoggedin') === false ? true : false ;
 	}
 }
