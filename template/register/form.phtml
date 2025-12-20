@@ -18,7 +18,7 @@ if( empty($message) ){
 <p><?= $message ?></p>
 <?php $form->Start() ?>
 <table>
-	<?php foreach( $form->Values() as $name => $value ): ?>
+	<?php foreach( $form->Config()['input'] ?? [] as $name => $value ): ?>
 	<tr>
 		<td><?php $form->Label($name) ?></td>
 		<td><?php $form->Input($name) ?></td>
