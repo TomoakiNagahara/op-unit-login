@@ -14,7 +14,7 @@
 <p><?php echo $message ?? '' ?></p>
 <?php $form->Start('login') ?>
 <table>
-	<?php foreach( $form->Values() as $name => $value ): ?>
+	<?php foreach( $form->Config()['input'] ?? [] as $name => $value ): ?>
 	<tr>
 		<td><?php $form->Label($name) ?></td>
 		<td><?php $form->Input($name) ?></td>
