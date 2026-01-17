@@ -100,4 +100,17 @@ class Login implements IF_UNIT
 		//	...
 		return self::Session('isLoggedin') === false ? true : false ;
 	}
+
+	/**	Sign in is login.
+	 *
+	 * @created     2026-01-17
+	 */
+	static function SignIn()
+	{
+		if( OP()->isCI() ){
+			return true;
+		}
+		require_once(__DIR__.'/SignIn.class.php');
+		LOGIN\SignIn::Auto();
+	}
 }
