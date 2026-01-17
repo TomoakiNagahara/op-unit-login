@@ -113,4 +113,17 @@ class Login implements IF_UNIT
 		require_once(__DIR__.'/SignIn.class.php');
 		LOGIN\SignIn::Auto();
 	}
+
+	/**	Sign in is register account.
+	 *
+	 * @created     2026-01-17
+	 */
+	static function SignUp()
+	{
+		if( OP()->isCI() ){
+			return true;
+		}
+		require_once(__DIR__.'/SignUp.class.php');
+		LOGIN\SignUp::Auto();
+	}
 }
