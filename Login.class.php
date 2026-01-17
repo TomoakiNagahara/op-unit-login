@@ -46,8 +46,7 @@ class Login implements IF_UNIT
 				break;
 
 			case 'register':
-				require_once(__DIR__.'/SignUp.class.php');;
-				LOGIN\SignUp::Auto();;
+				self::SignUp();
 				break;
 
 			default:
@@ -55,8 +54,7 @@ class Login implements IF_UNIT
 					//	...
 					D('Already logged in.');
 				}else{
-					require_once(__DIR__.'/SignIn.class.php');
-					LOGIN\SignIn::Auto();
+					self::SignIn();
 				}
 			break;
 		};
