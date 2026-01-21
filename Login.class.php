@@ -12,20 +12,20 @@
  */
 namespace OP\UNIT;
 
-/** use
+/**	Use
  *
  */
-use OP\IF_UNIT;
 use OP\OP_CORE;
 use OP\OP_CI;
 use OP\OP_SESSION;
 use OP\OP_TEMPLATE;
+use OP\IF_LOGIN;
 
 /**	Login
  *
  * @created     2023-01-30
  */
-class Login implements IF_UNIT
+class Login implements IF_LOGIN
 {
 	use OP_CORE, OP_CI;
 	use OP_SESSION, OP_TEMPLATE;
