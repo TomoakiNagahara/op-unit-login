@@ -126,4 +126,14 @@ class Login implements IF_LOGIN
 		require_once(__DIR__.'/SignUp.class.php');
 		LOGIN\SignUp::Auto();
 	}
+
+	/**	Log out
+	 *
+	 * @created     2026-01-20
+	 * @return      boolean
+	 */
+	static function SignOut()
+	{
+		return self::Logout();
+	}
 }
