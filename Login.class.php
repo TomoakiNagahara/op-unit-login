@@ -82,6 +82,16 @@ class Login implements IF_LOGIN
 		];
 	}
 
+	/**	Return Auto increment id.
+	 *
+	 * @created     2026-02-03
+	 * @return      int|false
+	 */
+	static function AI() : int | false
+	{
+		return self::Session('ai') ?? false;
+	}
+
 	/** Logout
 	 *
 	 * @created     2025-06-04
