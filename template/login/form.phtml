@@ -11,7 +11,7 @@
 /* @var $message string        */
 
 ?>
-<p><?php echo $message ?? '' ?></p>
+<p class="error"><?php echo $message ?? '' ?></p>
 <?php $form->Start('login') ?>
 <table>
 	<?php foreach( $form->Config()['input'] ?? [] as $name => $value ): ?>
