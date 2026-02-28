@@ -12,7 +12,7 @@
 
 ?>
 <p class="error"><?php echo $message ?? '' ?></p>
-<?php $form->Start('login') ?>
+<?php $form->Start() ?>
 <table>
 	<?php foreach( $form->Config()['input'] ?? [] as $name => $value ): ?>
 	<tr>
