@@ -162,7 +162,7 @@ class Login implements IF_LOGIN
 	 * @created     2026-01-20
 	 * @return      boolean
 	 */
-	static function SignOut()
+	static function SignOut() : bool
 	{
 		return self::Logout();
 	}
