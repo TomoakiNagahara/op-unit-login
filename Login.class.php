@@ -46,7 +46,7 @@ class Login implements IF_LOGIN
 				break;
 
 			case 'register':
-				self::SignUp();
+				self::SignUp('','');
 				break;
 
 			default:
@@ -54,7 +54,7 @@ class Login implements IF_LOGIN
 					//	...
 					D('Already logged in.');
 				}else{
-					self::SignIn();
+					self::SignIn('','');
 				}
 			break;
 		};
