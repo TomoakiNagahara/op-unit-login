@@ -138,13 +138,23 @@ class Login implements IF_LOGIN
 	 *
 	 * @created     2026-01-17
 	 */
-	static function SignUp()
+	static function SignUp( string $account, string $password ) : bool
 	{
+		//	...
+		require_once(__DIR__.'/SignUp.class.php');
+
+		//	...
+		if( $account and $password ){
+			return LOGIN\SignUp::Register($account, $password);
+		}
+
+		//	...
 		if( OP()->isCI() ){
 			return true;
 		}
-		require_once(__DIR__.'/SignUp.class.php');
-		LOGIN\SignUp::Auto();
+
+		//	...
+		return LOGIN\SignUp::Auto();
 	}
 
 	/**	Log out

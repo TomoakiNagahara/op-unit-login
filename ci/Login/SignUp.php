@@ -23,7 +23,14 @@ $method = explode('.', $method)[0];
 
 /* @var $ci \OP\UNIT\CI\CI_Config */
 
-//	...
-$args   = null;
-$result = true;
+//	Positive case
+$account  = 'CI_'.md5( (string)microtime() );
+$password = 'password';
+$args   = [$account, $password];
+$result =  true;
+$ci->Set($method, $result, $args);
+
+//	Negative case
+$args   = [$account, $password];
+$result =  false;
 $ci->Set($method, $result, $args);
