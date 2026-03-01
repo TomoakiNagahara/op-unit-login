@@ -104,7 +104,7 @@ class SignIn implements IF_UNIT
 	 * @param      string      $password
 	 * @return     bool
 	 */
-	static function isCredentials(string $account='', string $password='') : bool
+	static function isCredentials( string $account, string $password ) : bool
 	{
 		//	...
 		$qql = self::QQL();
