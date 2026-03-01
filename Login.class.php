@@ -67,7 +67,7 @@ class Login implements IF_LOGIN
 	 */
 	static function isLoggedin() : bool
 	{
-		return self::Session('isLoggedin');
+		return self::Session('ai') ? true: false;
 	}
 
 	/** Log in information.
