@@ -24,6 +24,11 @@ $method = explode('.', $method)[0];
 /* @var $ci \OP\UNIT\CI\CI_Config */
 
 //	...
-$args   = null;
-$result = true;
-$ci->Set($method, $result, $args);
+$account  = 'CI';
+$password = 'password';
+$prepare= function() use ( $account, $password ){
+	OP()->Unit()->Login()->SignUp($account, $password);
+};
+$args   = [$account, $password];
+$result =  true;
+$ci->Set($method, $result, $args, prepare: $prepare);

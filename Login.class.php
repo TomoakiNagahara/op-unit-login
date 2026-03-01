@@ -115,13 +115,23 @@ class Login implements IF_LOGIN
 	 *
 	 * @created     2026-01-17
 	 */
-	static function SignIn()
+	static function SignIn( string $account, string $password ) : bool
 	{
+		//	...
+		require_once(__DIR__.'/SignIn.class.php');
+
+		//	...
+		if( $account and $password ){
+			return LOGIN\SignIn::isCredentials($account, $password);
+		}
+
+		//	...
 		if( OP()->isCI() ){
 			return true;
 		}
-		require_once(__DIR__.'/SignIn.class.php');
-		LOGIN\SignIn::Auto();
+
+		//	...
+		return LOGIN\SignIn::Auto();
 	}
 
 	/**	Sign in is register account.
