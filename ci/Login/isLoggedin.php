@@ -17,5 +17,5 @@ namespace OP;
 //	isLoggedin
 $method = 'isLoggedin';
 $args   =  null;
-$result =  null;
+$result =  false;
 $ci->Set($method, $result, $args);

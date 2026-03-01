@@ -65,7 +65,7 @@ class Login implements IF_LOGIN
 	 * @created     2025-06-02
 	 * @return      bool
 	 */
-	static function isLoggedin() : ?bool
+	static function isLoggedin() : bool
 	{
 		return self::Session('isLoggedin');
 	}
