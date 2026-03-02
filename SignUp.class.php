@@ -110,7 +110,7 @@ class SignUp implements IF_UNIT
 		$password = md5($password); // Hash the password.
 
 		//	Check if the account name is already in use.
-		if( $ai = $qql->Get("t_register.account = {$account}") ){
+		if( $ai = $qql->Get(" ai <- t_register.account = {$account}", limit:1) ){
 			return false;
 		}
 
