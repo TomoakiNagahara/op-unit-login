@@ -18,7 +18,6 @@ namespace OP;
 $method = 'Session';
 $args   =  null;
 $result = [
-	'isLoggedin' => false,
 	'ai'         => null,
 	'account'    => null,
 ];
