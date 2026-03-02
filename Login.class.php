@@ -101,14 +101,13 @@ class Login implements IF_LOGIN
 		//	...
 		self::Session('ai',          null);
 		self::Session('account',     null);
-		self::Session('isLoggedin', false);
 
 		//	...
 		require_once(__DIR__.'/SignIn.class.php');
 		LOGIN\SignIn::Form()->Clear();
 
 		//	...
-		return self::Session('isLoggedin') === false ? true : false ;
+		return empty(self::Session('ai')) ? true : false ;
 	}
 
 	/**	Sign in is login.
