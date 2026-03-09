@@ -143,12 +143,7 @@ class Login implements IF_LOGIN
 		}
 
 		//	...
-		if( OP()->isCI() ){
-			return true;
-		}
-
-		//	...
-		return LOGIN\SignUp::Auto();
+		return LOGIN\SignUp::Auto() ? true: false;
 	}
 
 	/**	Log out
