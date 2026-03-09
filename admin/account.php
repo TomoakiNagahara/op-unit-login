@@ -8,10 +8,10 @@
  */
 
 //	...
-if(!OP()->Unit()->QQL()->Open('Login.sqlite3') ){
+if(!OP()->Unit()->QQL()->Open('sqlite:'.OP()->Path('asset:/db/Login.sqlite3')) ){
 	return;
 }
 
 //	...
 $record = OP()->Unit()->QQL()->Get(' t_register.ai > 0 ', limit:-1);
-D($record);
+OP()->Unit()->Html()->Record($record);
