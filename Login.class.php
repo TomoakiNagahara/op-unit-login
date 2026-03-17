@@ -89,7 +89,16 @@ class Login implements IF_LOGIN
 	 */
 	static function AI() : int | false
 	{
-		return self::Session('ai') ?? false;
+		//	...
+		if(!$ai = self::Session('ai') ?? false){
+			//	...
+			if( OP()->isCI() ){
+				$ai = 1;
+			}
+		}
+
+		//	...
+		return $ai ?? false;
 	}
 
 	/** Logout

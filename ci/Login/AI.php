@@ -25,5 +25,5 @@ $method = explode('.', $method)[0];
 
 //	...
 $args   =  null;
-$result =  false;
+$result =  1;
 $ci->Set($method, $result, $args);
