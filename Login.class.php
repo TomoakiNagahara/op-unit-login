@@ -111,9 +111,11 @@ class Login implements IF_LOGIN
 		self::Session('ai',          null);
 		self::Session('account',     null);
 
-		//	...
+		//	This will result in an error that depends on the Form UNIT implementation.
+		if(!OP()->isCI() ){
 		require_once(__DIR__.'/SignIn.class.php');
 		LOGIN\SignIn::Form()->Clear();
+		}
 
 		//	...
 		return empty(self::Session('ai')) ? true : false ;
